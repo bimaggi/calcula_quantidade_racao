@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="./image/PawShop.jpg" alt="">
+            </div> 
+        </header>
+        <section>
+            <div class="form">
+                <h1>Calcule a quantidade de ração para o seu amigo de 4 patas</h1>
+                <select id="specie" onChange="update()">
+                    <option value="dog" >Cachorro</option>
+                    <option value="cat">Gato</option>
+                </select>  
+                <select id="age">
+                    <option value="adult" >Adulto</option>
+                    <option value="puppy">Filhote</option>
+                </select>  
+                <select id="physicalActivity">
+                    <option value="inactive" >Não pratica atividade fisíca</option>
+                    <option value="active">Pratica atividade física moderada</option>
+                    <option value="veryActive">Pratica atividade fisíca de alto nível</option>
+                </select>  
+                <input type="number" id="size" step="0.010" placeholder="Qual é o peso do seu amigão?">
+                <label for="">Ex: 5.40</label>
+                <button id="calc">Calcular</button>
+                <div id="result" class="res">
+                </div>
+        </section>
+        <footer>
+            <div class="attention">
+                <h1>Importante!</h1>
+                <p>É fundamental fazer o acompanhamento do seu amigo de 4 patas à um bom veterinário!<br>
+                   A Alimentação deve ser montada analisando uma série de fatores - inclusive idade e possíveis condições especiais. 
+            </div>
+                <hr>
+                <a href="https://www.linkedin.com/in/marcia-beserra-de-oliveira-9303801b9/"><p>Copyright &copy 2021; Created and developed by Marcia</p></a> 
+
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
