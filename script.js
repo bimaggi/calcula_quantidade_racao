@@ -3,9 +3,8 @@ const result = document.querySelector('#result');
 const calculo = document.querySelector('#calc');
 calculo.addEventListener('click', calculate, false);
 
-const specie = document.querySelector('#specie')
-specie.addEventListener('change',update,false)
-
+const specie = document.querySelector('#specie');
+specie.addEventListener('change',update,false);
 
 result.innerHTML = ''
 let optionspecie = '';
@@ -22,27 +21,27 @@ const BASE_DOG_ADULT= 3795;
 const BASE_DOG_PUPPY= 3820;
 const BASE_CAT_ADULT = 4157;
 const BASE_CAT_PUPPY = 3919;
-
-
+ 
 function update(){
-     const option = specie.options[specie.selectedIndex].value
+
+     const option = specie.options[specie.selectedIndex].value;
 
      if(option == "cat"){
           document.querySelector('#physicalActivity').style.display = "none"
      }else{
           document.querySelector('#physicalActivity').style.display = "block"
      }
-
      result.innerHTML = '';
 }
 
 function calculate(){
+
     optionspecie = specie.value;
     optionAge = age.value;
     optionSize = size.value;
     optionPhysicalActivity = physicalActivity.value;
     specieAge();
-    
+
 }
 
 function validateField(){
@@ -53,65 +52,70 @@ function validateField(){
 }
 
 function specieAge(){
+
+     result.innerHTML =''
      
-     if(optionspecie == "dog" && optionAge == "adult"){
-          amountAdtDog();
-     }
-     else if(optionspecie == "dog" && optionAge == "puppy"){
-          amountPuppyDog();
-     }
-     else if(optionspecie == "cat" && optionAge == "adult"){
-          amountAdtCat();
+     if(optionspecie === "dog" && optionAge === "adult"){
+
+          if(optionPhysicalActivity ===  "active"){
+               amountAdtDog(ACTIVE_DOG);
+          }
+          else if (optionPhysicalActivity ===  "inactive"){
+               amountAdtDog(INACTIVE_DOG);
+
+          }else {
+               amountAdtDog(VERY_ACTIVE_DOG);
+          }
+     } 
+
+     else if(optionspecie === "dog" && optionAge === "puppy"){
+
+          if(optionPhysicalActivity ===  "active"){
+               amountPuppyDog(ACTIVE_DOG);
+          }
+          else if (optionPhysicalActivity ===  "inactive"){
+               amountPuppyDog(INACTIVE_DOG);
+
+          }else {
+               amountPuppyDog(VERY_ACTIVE_DOG);
+          }
+   }
+   
+   else if(optionspecie === "cat" && optionAge === "adult"){
+        amountAdtCat(INACTIVE_CAT);
 
      }else{
-          amountPuppyCat();
+          amountPuppyCat(INACTIVE_CAT);
 
      }
      validateField();
 }
 
-function amountAdtDog(){
+function amountAdtDog(activity){
 
-     if( optionPhysicalActivity == "inactive"){
-          result.innerHTML = `A quantidade recomendada é de: 
-          ${Math.floor(INACTIVE_DOG *( size.value ** 0.75 ) / BASE_DOG_ADULT * 1000)}grs`; 
+     result.innerHTML = `A quantidade recomendada é de: 
+          ${Math.floor(activity * ( size.value ** 0.75 ) / BASE_DOG_ADULT * 1000)}grs`;  
      }  
-     else if(optionPhysicalActivity == "active"){
-          result.innerHTML =`A quantidade recomendada é de: 
-          ${Math.floor(ACTIVE_DOG *( size.value ** 0.75 ) / BASE_DOG_ADULT * 1000)}grs`;  
-     }
-     else{
-          result.innerHTML =`A quantidade recomendada é de: 
-          ${Math.floor(VERY_ACTIVE_DOG *( size.value ** 0.75 ) / BASE_DOG_ADULT * 1000)}grs`;  
-     }
+
+function amountPuppyDog(activity){
+         result.innerHTML =`A quantidade recomendada é de: 
+         ${Math.floor((activity + 2) * ( size.value ** 0.75 ) / BASE_DOG_PUPPY * 1000)}grs`;  
+    }     
     
-}
-function amountPuppyDog(){
-
-        if( optionPhysicalActivity == "inactive"){
-          result.innerHTML =`A quantidade recomendada é de: 
-          ${Math.floor((INACTIVE_DOG + 2) * ( size.value ** 0.75 ) / BASE_DOG_PUPPY * 1000)}grs`;  
-     }  
-     else if(optionPhysicalActivity == "active"){
-          result.innerHTML =`A quantidade recomendada é de: 
-          ${Math.floor((ACTIVE_DOG + 2) * ( size.value ** 0.75 ) / BASE_DOG_PUPPY * 1000)}grs`;  
-     }
-     else{
-          result.innerHTML =`A quantidade recomendada é de: 
-          ${Math.floor((VERY_ACTIVE_DOG + 2) * ( size.value ** 0.75 ) / BASE_DOG_PUPPY * 1000)}grs`;  
-     }
-}
-
-function amountAdtCat(){
+function amountAdtCat(activity){
 
      result.innerHTML += `A quantidade recomendada é de: 
-     ${Math.floor(INACTIVE_CAT * ( size.value ** 0.67 ) / BASE_CAT_ADULT * 1000)}grs`;  
+     ${Math.floor(activity * ( size.value ** 0.67 ) / BASE_CAT_ADULT * 1000)}grs`;  
 }
-function amountPuppyCat(){
+function amountPuppyCat(activity){
 
      result.innerHTML=`A quantidade recomendada é de: 
-     ${Math.floor((INACTIVE_CAT + 2) * ( size.value ** 0.67 ) / BASE_CAT_PUPPY * 1000)}grs`;  
+     ${Math.floor((activity + 2) * ( size.value ** 0.67 ) / BASE_CAT_PUPPY * 1000)}grs`;  
 }
+
+
+
+
 
 
 
