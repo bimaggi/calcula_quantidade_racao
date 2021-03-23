@@ -93,24 +93,24 @@ function specieAge(){
 
 function amountAdtDog(activity){
 
-     result.innerHTML = `A quantidade recomendada é de: 
-          ${Math.floor(activity * ( size.value ** 0.75 ) / BASE_DOG_ADULT * 1000)}grs`;  
+     result.innerHTML = `A quantidade diária recomendada é de: <font color="FF00">
+          ${Math.floor(activity * ( size.value ** 0.75 ) / BASE_DOG_ADULT * 1000)}grs</font>`;  
      }  
 
 function amountPuppyDog(activity){
-         result.innerHTML =`A quantidade recomendada é de: 
-         ${Math.floor((activity + 2) * ( size.value ** 0.75 ) / BASE_DOG_PUPPY * 1000)}grs`;  
+         result.innerHTML =`A quantidadediária recomendada é de: <font color="FF00">
+         ${Math.floor((activity + 2) * ( size.value ** 0.75 ) / BASE_DOG_PUPPY * 1000)}grs</font>`;  
     }     
     
 function amountAdtCat(activity){
 
-     result.innerHTML += `A quantidade recomendada é de: 
-     ${Math.floor(activity * ( size.value ** 0.67 ) / BASE_CAT_ADULT * 1000)}grs`;  
+     result.innerHTML += `A quantidade diária recomendada é de: <font color="FF00">
+     ${Math.floor(activity * ( size.value ** 0.67 ) / BASE_CAT_ADULT * 1000)}grs</font>`;  
 }
 function amountPuppyCat(activity){
 
-     result.innerHTML=`A quantidade recomendada é de: 
-     ${Math.floor((activity + 2) * ( size.value ** 0.67 ) / BASE_CAT_PUPPY * 1000)}grs`;  
+     result.innerHTML=`A quantidade diária recomendada é de:<font color="FF00">
+     ${Math.floor((activity + 2) * ( size.value ** 0.67 ) / BASE_CAT_PUPPY * 1000)}grs</font>`;  
 }
 
 
