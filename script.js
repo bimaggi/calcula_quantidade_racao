@@ -98,7 +98,7 @@ function amountAdtDog(activity){
      }  
 
 function amountPuppyDog(activity){
-         result.innerHTML =`A quantidadediária recomendada é de: <font color="FF00">
+         result.innerHTML =`A quantidade diária recomendada é de: <font color="FF00">
          ${Math.floor((activity + 2) * ( size.value ** 0.75 ) / BASE_DOG_PUPPY * 1000)}grs</font>`;  
     }     
     
