@@ -24,7 +24,7 @@ Esse projeto foi desenvolvido para ajudar as pessoas a calcularem a quantidade r
 
 ##  Como utilizar
 
-Acesse o link    
+Acesse o link    https://goofy-goldberg-1e02a8.netlify.app/
 Você também pode clonar o repositório  https://github.com/bimaggi/calcula_quantidade_racao.git
 
 
