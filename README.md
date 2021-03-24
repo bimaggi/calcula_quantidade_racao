@@ -22,8 +22,9 @@ Esse projeto foi desenvolvido para ajudar as pessoas a calcularem a quantidade r
 -  CSS;
 -  Javascript;
 
-Desktop       
-![Design sem nome](https://user-images.githubusercontent.com/66282316/112364398-3ae53080-8cb5-11eb-8245-02d48837ed11.jpg)
+Desktop  
+![Design sem nome (1)](https://user-images.githubusercontent.com/66282316/112374441-daf48700-8cc0-11eb-85a7-f31ac7c3176b.jpg)
+
 
 Mobile
 ![Design sem nome (2)](https://user-images.githubusercontent.com/66282316/112364451-49334c80-8cb5-11eb-87b8-cd906447c039.jpg)
